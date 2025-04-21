@@ -29,9 +29,31 @@
 
       liste.splice(1, 0, 8); //einfügen durch splicen 1= index eins, 0= nichts löschen, 8= die Zahl die eingeführt werden soll.
       console.log(liste);
+
       //----------------------
       //TODO 7: ForEach
+      function ausgabe(element) {
+        console.log(element);
+      }
+
+      liste.forEach((element) => {
+        console.log(element);
+      });
+
+      for (let i = 0; i < liste.length; i++) {
+        console.log(liste[i]);
+      }
+
+      for (let element of liste) {
+        console.log(element);
+      }
+
       //TODO 8: Filter
+      const filteredListe = liste.filter((element) => {
+        return element < 5; //bei false wird die Liste/ Array der Inhalt weggefiltert / bei True bleiben die Werte.
+      });
+      console.log(filteredListe);
+      // wichtiger Hinweis, verändere nicht die Länge des aktuellen Arrays. Lieber ein neues Array nehmen.
 
       //----------------------
 
