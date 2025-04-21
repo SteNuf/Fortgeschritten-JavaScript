@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+    <script>
+      //TODO 1: Array erstellen
+      //TODO 2: Array mit Startwerten befüllen
+      //TODO 3: Array auf der Konsole ausgeben.
+      const liste = [5, 9, 3, 4];
+      console.log(liste);
+
+      //TODO 4: Array mit Werten befüllen & ausgeben
+      liste.push(6);
+      console.log(liste.length);
+      console.log(liste);
+      const letzteElement = liste.pop(); // das letzte Elment des Arrayas wird gelöscht.
+      console.log(letzteElement);
+      console.log(liste);
+
+      console.log(liste[0]);
+      console.log(liste[liste.length - 1]); //letzte Element wird ausgelesen.
+
+      //TODO 5: Array auf Konsole ausgeben und Länge darstellen
+      //TODO 6: Array splicen (löschen und einfügen)
+      liste.splice(1, 1);
+      console.log(liste);
+
+      liste.splice(1, 0, 8); //einfügen durch splicen 1= index eins, 0= nichts löschen, 8= die Zahl die eingeführt werden soll.
+      console.log(liste);
+      //----------------------
+      //TODO 7: ForEach
+      //TODO 8: Filter
+
+      //----------------------
+
+      //TODo 9: Map
+      //TODO 10: Reduce
+    </script>
+  </head>
+  <body></body>
+</html>
