@@ -57,8 +57,19 @@
 
       //----------------------
 
-      //TODo 9: Map
+      //TODO 9: Map erstellt eine Kopie eines Array (Karte).Es verändert nicht das alte Array.
+      console.log(liste);
+      const mappedList = liste.map((element) => {
+        return element * 2;
+      }); // Hilfreich bei sachen, wo man auf alle Elemente das gleiche ausführen möchtest.
+      console.log(mappedList);
       //TODO 10: Reduce
+      const reducedValue = liste.reduce((previousValue, currentValue) => {
+        console.log(previousValue + currentValue);
+        return previousValue + currentValue;
+      });
+
+      console.log(reducedValue);
     </script>
   </head>
   <body></body>
