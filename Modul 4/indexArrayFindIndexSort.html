@@ -4,6 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array Find FindIndex Sort</title>
+    <script>
+      const liste = [5, 9, 3, 4];
+      console.log(liste);
+      // TODO 1: Find
+      const neun = liste.find((zahl) => {
+        return zahl === 9;
+      });
+      console.log(neun);
+
+      // TODO 2: FindIndex
+      const neunIndex = liste.findIndex((zahl) => {
+        return zahl === 9;
+      });
+      console.log(neunIndex);
+
+      // TODO 3: Sort Ein neues Array wird sortiert zurück gegeben
+      const sortArray = liste.sort();
+      console.log(sortArray);
+
+      const sortArray2 = liste.sort((a, b) => {
+        if (a < b) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      console.log(sortArray2);
+    </script>
   </head>
   <body></body>
 </html>
