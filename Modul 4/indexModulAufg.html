@@ -4,26 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modul 4 Aufgabe</title>
-    <script></script>
+    <script>
+      // 1. Erstellen eines Array unbefüllt.
+      const listeArray = [];
+
+      // 2a. Funktion erstellen das Zahlen in das Array eingeführt wird.
+      function pushNumberArray() {
+        let getInputValue = document.getElementById("new-content").value;
+        listeArray.push(getInputValue);
+      }
+
+      // 2c. Verknüpfung Button Einfügen Inhalt
+      function pushButtonNumberArray() {
+        pushNumberArray();
+        console.log(listeArray);
+      }
+
+      // 2d. Anzeige Button verknüpfen mit Funktion
+      function pushShowButton() {
+        console.log(listeArray);
+      }
+
+      // 3. Content löschen
+      function deleteContent() {
+        let getInputValueDelete =
+          document.getElementById("content-delete").value;
+        listeArray.pop();
+        console.log(listeArray);
+      }
+
+      function buttonDeleteContent() {
+        deleteContent();
+        console.log(listeArray);
+      }
+    </script>
   </head>
   <body>
     <div>
-      Inhalt einfügen: <input type="number" id="new-content" />
-      <button id="paste">Einfügen</button>
+      Inhalt einfügen: <input type="text" id="new-content" />
+      <button onclick="pushButtonNumberArray()">Einfügen</button>
     </div>
     <div>
-      ID Löschen: <input type="number" id="index-delete" />
+      ID Löschen: <input type="text" id="index-delete" />
       <button id="delete">Löschen</button>
     </div>
     <div>
       Content Löschen:<input type="text" id="content-delete" /><button
-        id="button-delete-Content"
+        onclick="buttonDeleteContent()"
       >
         Löschen Inhalt
       </button>
     </div>
-    <div><button>Anzeigen</button></div>
-    <div><button>Multiplizieren</button></div>
-    <div><button>Summe</button></div>
+    <div>
+      <button id="show-button" onclick="pushShowButton()">Anzeigen</button>
+    </div>
+    <div><button id="multiply-button">Multiplizieren</button></div>
+    <div><button id="summit-button">Summe</button></div>
   </body>
 </html>
