@@ -6,26 +6,36 @@
     <title>Modul 4 Aufgabe</title>
     <script>
       // 1. Erstellen eines Array unbefüllt.
-      const listeArray = [];
+      const listeArray = [2, 7];
 
-      // 2a. Funktion erstellen das Zahlen in das Array eingeführt wird.
+      // Funktion erstellen das Zahlen in das Array eingeführt wird.
       function pushNumberArray() {
         let getInputValue = document.getElementById("new-content").value;
         listeArray.push(getInputValue);
       }
 
-      // 2c. Verknüpfung Button Einfügen Inhalt
+      // Verknüpfung Button Einfügen Inhalt
       function pushButtonNumberArray() {
         pushNumberArray();
         console.log(listeArray);
       }
 
-      // 2d. Anzeige Button verknüpfen mit Funktion
+      function indexDelete() {
+        let getInputValueIndex = document.getElementById("index-delete").value;
+        listeArray.splice(getInputValueIndex);
+        console.log(listeArray);
+      }
+
+      function buttonIndexDelete() {
+        indexDelete();
+      }
+
+      // Anzeige Button verknüpfen mit Funktion
       function pushShowButton() {
         console.log(listeArray);
       }
 
-      // 3. Content löschen
+      // Content löschen
       function deleteContent() {
         let getInputValueDelete =
           document.getElementById("content-delete").value;
@@ -37,6 +47,22 @@
         deleteContent();
         console.log(listeArray);
       }
+
+      function multiplyButton() {
+        const multiplyArray = listeArray.map((element) => {
+          return element * 2;
+          console.log(multiplyArray);
+        });
+        console.log("test1");
+      }
+
+      function buttonSum() {
+        let sumArray = 0;
+        for (let i = 0; i < listeArray.length; i++) {
+          sumArray += listeArray;
+          console.log(sumArray);
+        }
+      }
     </script>
   </head>
   <body>
@@ -46,7 +72,7 @@
     </div>
     <div>
       ID Löschen: <input type="text" id="index-delete" />
-      <button id="delete">Löschen</button>
+      <button onclick="buttonIndexDelete()">Löschen</button>
     </div>
     <div>
       Content Löschen:<input type="text" id="content-delete" /><button
@@ -58,7 +84,7 @@
     <div>
       <button id="show-button" onclick="pushShowButton()">Anzeigen</button>
     </div>
-    <div><button id="multiply-button">Multiplizieren</button></div>
-    <div><button id="summit-button">Summe</button></div>
+    <div><button onclick="multiplyButton()">Multiplizieren</button></div>
+    <div><button id="summit-button" onclick="buttonSum()">Summe</button></div>
   </body>
 </html>
