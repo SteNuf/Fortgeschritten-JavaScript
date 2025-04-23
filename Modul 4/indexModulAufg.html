@@ -49,19 +49,16 @@
       }
 
       function multiplyButton() {
-        const multiplyArray = listeArray.map((element) => {
-          return element * 2;
-          console.log(multiplyArray);
-        });
-        console.log("test1");
+        const multiplyArray = listeArray.map((element) => element * 2);
+        console.log("test1", multiplyArray);
       }
 
       function buttonSum() {
         let sumArray = 0;
         for (let i = 0; i < listeArray.length; i++) {
-          sumArray += listeArray;
-          console.log(sumArray);
+          sumArray += listeArray[i];
         }
+        console.log(sumArray);
       }
     </script>
   </head>
