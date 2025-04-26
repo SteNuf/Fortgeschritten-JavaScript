@@ -4,11 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe Objekte</title>
-    <script></script>
+    <script>
+      const grads = {
+        english: 1,
+        german: 1,
+        maths: 1,
+      };
+
+      const pupils = {
+        firtName: "Hans",
+        lastName: "Mustermann",
+        age: 3,
+        score: [grads],
+      };
+
+      console.log(pupils);
+    </script>
   </head>
+
   <body>
     <div>Vorname: <input type="text" id="first-name-input" /></div>
     <div>Nachname: <input type="text" id="second-name-input" /></div>
+    <div>Alter: <input type="text" id="age-input" /></div>
     <div>
       Klasse:
       <select name="class" id="class-input">
