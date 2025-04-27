@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LösungAufgabeObjekt</title>
+    <script>
+      const students = [];
+
+      function createStudent() {
+        const firstName = document.getElementById("first-name-input").value;
+        const lastName = document.getElementById("second-name-input").value;
+        const age = document.getElementById("age-input").value;
+        const schoolClass = document.getElementById("class-input").value;
+        const english = document.getElementById("englisch-input").value;
+        const german = document.getElementById("german-input").value;
+        const math = document.getElementById("mathe-input").value;
+
+        const student = {
+          firstName: firstName,
+          lastName: lastName,
+          age: age,
+          schoolClass: schoolClass,
+          score: {
+            english: english,
+            german: german,
+            math: math,
+          },
+        };
+
+        students.push(student);
+        printAll();
+      }
+
+      function printAll() {
+        console.log(students);
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Schüler eintragen:</h3>
+    Vorname: <input type="text" id="first-name-input" /> <br />
+    Nachname:<input type="text" id="second-name-input" /><br />
+    Alter: <input type="text" id="age-input" /><br />
+    Klasse:
+    <select name="class" id="class-input">
+      <option value="1">1.</option>
+      <option value="2">2.</option>
+      <option value="3">3.</option>
+      <option value="4">4.</option></select
+    ><br />
+    Englisch:<input type="text" id="englisch-input" /> <br />
+    Deutsch: <input type="text" id="german-input" /> <br />
+    Mathe: <input type="text" id="mathe-input" /><br />
+    <button onclick="createStudent()">Erstellen</button><br />
+    <button onclick="printAll()">Anzeigen</button><br />
+  </body>
+</html>
