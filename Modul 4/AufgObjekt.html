@@ -5,20 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe Objekte</title>
     <script>
-      const grads = {
-        english: 1,
-        german: 1,
-        maths: 1,
-      };
+      const grads = [
+        {
+          english: 0,
+          german: 0,
+          maths: 0,
+        },
+      ];
 
-      const pupils = {
-        firtName: "Hans",
-        lastName: "Mustermann",
-        age: 3,
-        score: [grads],
-      };
+      const pupils = [
+        {
+          firstName: "",
+          lastName: "",
+          age: 0,
+          schoolclass: 1,
+          score: [grads],
+        },
+      ];
+
+      function push() {
+        let pupilsDataFirstName =
+          document.getElementById("first-name-input").value;
+        let pupilsDataSecondName =
+          document.getElementById("second-name-input").value;
+        let pupilsDataAge = Number(document.getElementById("age-input").value);
+        let pupilsDataClass = Number(
+          document.getElementById("class-input").value
+        );
+        let pupilsDataScoreEng = Number(
+          document.getElementById("englisch-input").value
+        );
+        let pupilsDataScoreGerman = Number(
+          document.getElementById("german-input").value
+        );
+        let pupilsDataScoreMaths = Number(
+          document.getElementById("german-input").value
+        );
+
+        pupils.push(
+          pupilsDataFirstName,
+          pupilsDataSecondName,
+          pupilsDataAge,
+          pupilsDataClass,
+          pupilsDataScoreEng,
+          pupilsDataScoreGerman,
+          pupilsDataScoreMaths
+        );
+      }
 
       function show() {
+        //console.log(pupils);
         console.log(pupils);
       }
     </script>
@@ -31,10 +67,10 @@
     <div>
       Klasse:
       <select name="class" id="class-input">
-        <option value="class-one">1.</option>
-        <option value="class-two">2.</option>
-        <option value="class-three">3.</option>
-        <option value="class-four">4.</option>
+        <option value="1">1.</option>
+        <option value="2">2.</option>
+        <option value="3">3.</option>
+        <option value="4">4.</option>
       </select>
     </div>
     <div>Englisch:<input type="text" id="englisch-input" /></div>
