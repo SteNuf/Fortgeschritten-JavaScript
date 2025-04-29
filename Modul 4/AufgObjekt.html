@@ -23,7 +23,7 @@
         },
       ];
 
-      function push() {
+      function pushArray() {
         let pupilsDataFirstName =
           document.getElementById("first-name-input").value;
         let pupilsDataSecondName =
@@ -54,8 +54,14 @@
       }
 
       function show() {
-        //console.log(pupils);
         console.log(pupils);
+        console.log("Vorname: " + pupils[1]);
+        console.log("Nachname: " + pupils[2]);
+        console.log("Alter: " + pupils[3]);
+        console.log("Klasse: " + pupils[4]);
+        console.log("Englisch: " + pupils[5]);
+        console.log("Deutsch: " + pupils[6]);
+        console.log("Mathe: " + pupils[7]);
       }
     </script>
   </head>
@@ -77,7 +83,7 @@
     <div>Englisch:<input type="text" id="englisch-input" /></div>
     <div>Deutsch: <input type="text" id="german-input" /></div>
     <div>Mathe: <input type="text" id="mathe-input" /></div>
-    <div><button onclick="push()">Erstellen</button></div>
+    <div><button onclick="pushArray()">Erstellen</button></div>
     <div><button onclick="show()">Anzeigen</button></div>
   </body>
 </html>
