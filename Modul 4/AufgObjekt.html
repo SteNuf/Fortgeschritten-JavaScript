@@ -13,15 +13,7 @@
         },
       ];
 
-      const pupils = [
-        {
-          firstName: "",
-          lastName: "",
-          age: 0,
-          schoolclass: 1,
-          score: [grads],
-        },
-      ];
+      const pupils = [];
 
       function pushArray() {
         let pupilsDataFirstName =
@@ -42,15 +34,17 @@
           document.getElementById("german-input").value
         );
 
-        pupils.push(
-          pupilsDataFirstName,
-          pupilsDataSecondName,
-          pupilsDataAge,
-          pupilsDataClass,
-          pupilsDataScoreEng,
-          pupilsDataScoreGerman,
-          pupilsDataScoreMaths
-        );
+        pupils.push({
+          firstName: pupilsDataFirstName,
+          lastName: pupilsDataSecondName,
+          age: pupilsDataAge,
+          schoolclass: pupilsDataClass,
+          score: {
+            english: pupilsDataScoreEng,
+            german: pupilsDataScoreGerman,
+            maths: pupilsDataScoreMaths,
+          },
+        });
       }
 
       function show() {
