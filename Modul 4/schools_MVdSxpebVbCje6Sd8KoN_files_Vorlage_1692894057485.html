@@ -1,73 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
+        border-radius: 10px;
+        padding: 1rem;
+        width: fit-content;
+        display: grid;
+        grid-column: auto;
+        gap: 1rem;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .card {
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
-      border-radius: 10px;
-      padding: 1rem;
-      width: fit-content;
-      display: grid;
-      grid-column: auto;
-      gap: 1rem;
-    }
+      .card-header {
+        font-size: 2rem;
+      }
 
-    .card-header {
-      font-size: 2rem;
-    }
+      .card-body > img {
+        max-width: 15rem;
+      }
+    </style>
+    <script>
+      const randomImages = [
+        "https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2018/05/31/00/38/knight-3442900_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2016/11/22/22/04/float-1850828_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2019/05/17/04/58/agriculture-4208863_960_720.jpg",
+      ];
 
-    .card-body>img {
-      max-width: 15rem;
-    }
-  </style>
-  <script>
-    const randomImages = ["https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg", "https://cdn.pixabay.com/photo/2018/05/31/00/38/knight-3442900_960_720.jpg", "https://cdn.pixabay.com/photo/2016/11/22/22/04/float-1850828_960_720.jpg", "https://cdn.pixabay.com/photo/2019/05/17/04/58/agriculture-4208863_960_720.jpg"]
+      function like(url) {
+        alert("You like " + url);
+      }
 
-    function like(url) {
-      alert("You like " + url);
-    }
+      function dislike(url) {
+        alert("You dislike " + url);
+      }
 
-    function dislike(url) {
-      alert("You dislike " + url);
-    }
+      function addNew() {
+        // TODO 1: Elemente erstellen (Card, Header, Body, Footer, Like, Dislike, Img)
+        // TODO 2: Klassen setzen (card, card-header, card-body)
+        const randomImage =
+          randomImages[Math.floor(Math.random() * randomImages.length)];
 
-    function addNew() {
-      // TODO 1: Elemente erstellen (Card, Header, Body, Footer, Like, Dislike)
-      //TODO 2: Klassen setzen (card, card-header, card-body)
-      //TODO 3: Image setzen
+        const card = document.createElement("div");
+        card.classList.add("card");
 
-      // TODO 3: Texte erzeugen (Title of a card, Like, Dislike)
+        const header = document.createElement("div");
+        const title = document.createTextNode("Title of cards");
+        header.classList.add("card-header");
+        header.appendChild(title);
 
-      // TODO 4: Texte anfügen an Elemente
+        const body = document.createElement("div");
+        body.classList.add("card-body");
 
-      // TODO 5: Elemente aneinander fügen
+        const footer = document.createElement("div");
+        footer.classList.add("card-footer");
 
-      // TODO 6: Wrapper Elemente append Child
-    }
+        // TODO 3: Texte erzeugen (Title of a card, Like, Dislike)
+        // TODO 4: Texte anfügen an Elemente
+        const likeButton = document.createElement("button");
+        likeButton.setAttribute("onclick", `like('${randomImage}')`);
 
-    function addNewByString() {
-      // TODO 1: Random Image
-      // TODO 2: String setzen (mit ${}-Notation)
-    }
-  </script>
-</head>
+        const likeText = document.createTextNode("Like");
+        likeButton.appendChild(likeText);
 
-<body>
-  <div class="card">
-    <div class="card-header">Title of a card</div>
-    <div class="card-body"><img src="https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg" /></div>
-    <div class="card-footer">
-      <button onclick="like('https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg')">Like</button>
-      <button onclick="dislike('https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg')">Dislike</button>
+        const dislikeButton = document.createElement("button");
+        dislikeButton.setAttribute("onclick", `dislike('${randomImage}')`);
+        const dislikeText = document.createTextNode("Dislike");
+        dislikeButton.appendChild(dislikeText);
+
+        // TODO 3: Image setzen
+
+        const img = document.createElement("img");
+        img.src = randomImage;
+
+        footer.appendChild(likeButton);
+        footer.appendChild(dislikeButton);
+
+        body.appendChild(img);
+
+        card.appendChild(header);
+        card.appendChild(body);
+        card.appendChild(footer);
+
+        document.getElementById("wrapper").appendChild(card); //prepend = wird davor gesetzt und nicht hintereinander
+
+        console.log(card);
+        // TODO 5: Elemente aneinander fügen
+        // TODO 6: Wrapper Elemente append Child
+      }
+      // nicht gute Methode -> nicht nehmen
+      function addNewByString() {
+        // TODO 1: Random Image
+        console.log(Math.random() * randomImages.length);
+        const randomImage =
+          randomImages[Math.floor(Math.random() * randomImages.length)];
+        console.log(randomImage);
+        // TODO 2: String setzen (mit ${}-Notation)
+        const htmlString = `
+          <div class="card">
+            <div class="card-header">Title of a card</div>
+            <div class="card-body"><img  src="${randomImage}"  />
+        </div>
+        <div class="card-footer">
+          <button onclick="like('${randomImage}')" > Like </button>
+          <button onclick="dislike('${randomImage}')">  Dislike</button>
+        </div>
+      </div>`;
+        document.getElementById("wrapper").innerHTML += htmlString;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="card-header">Title of a card</div>
+      <div class="card-body">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg"
+        />
+      </div>
+      <div class="card-footer">
+        <button
+          onclick="like('https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg')"
+        >
+          Like
+        </button>
+        <button
+          onclick="dislike('https://cdn.pixabay.com/photo/2016/04/15/17/26/box-1331470_960_720.jpg')"
+        >
+          Dislike
+        </button>
+      </div>
     </div>
-  </div>
-  <button onclick="addNewByString()">Add By String</button>
-  <button onclick="addNew()">Add New</button>
-  <div id="wrapper"></div>
-</body>
-
+    <button onclick="addNewByString()">Add By String</button>
+    <button onclick="addNew()">Add New</button>
+    <div id="wrapper"></div>
+  </body>
 </html>
