@@ -8,7 +8,7 @@
       .card {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
         border-radius: 10px;
-        padding: 1rem;
+
         width: fit-content;
         display: grid;
         grid-column: auto;
@@ -77,6 +77,8 @@
         const img = document.createElement("img");
         img.src = randomImage;
 
+        // TODO 5: Elemente aneinander fügen
+
         footer.appendChild(likeButton);
         footer.appendChild(dislikeButton);
 
@@ -86,12 +88,13 @@
         card.appendChild(body);
         card.appendChild(footer);
 
+        // TODO 6: Wrapper Elemente append Child
+
         document.getElementById("wrapper").appendChild(card); //prepend = wird davor gesetzt und nicht hintereinander
 
         console.log(card);
-        // TODO 5: Elemente aneinander fügen
-        // TODO 6: Wrapper Elemente append Child
       }
+
       // nicht gute Methode -> nicht nehmen
       function addNewByString() {
         // TODO 1: Random Image
