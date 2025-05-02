@@ -8,7 +8,7 @@
       .card {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
         border-radius: 10px;
-
+        padding: 1rem;
         width: fit-content;
         display: grid;
         grid-column: auto;
@@ -60,6 +60,9 @@
         footer.classList.add("card-footer");
 
         // TODO 3: Texte erzeugen (Title of a card, Like, Dislike)
+        // TODO 3: Image setzen
+        const img = document.createElement("img");
+        img.src = randomImage;
         // TODO 4: Texte anfügen an Elemente
         const likeButton = document.createElement("button");
         likeButton.setAttribute("onclick", `like('${randomImage}')`);
@@ -71,11 +74,6 @@
         dislikeButton.setAttribute("onclick", `dislike('${randomImage}')`);
         const dislikeText = document.createTextNode("Dislike");
         dislikeButton.appendChild(dislikeText);
-
-        // TODO 3: Image setzen
-
-        const img = document.createElement("img");
-        img.src = randomImage;
 
         // TODO 5: Elemente aneinander fügen
 

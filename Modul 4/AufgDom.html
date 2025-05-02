@@ -6,22 +6,39 @@
     <title>Aufgabe DOM</title>
     <style>
       .children-data {
-        border-radius: 10px;
+        border-radius: 5px;
         border-style: solid;
         width: auto;
         display: grid;
         grid-column: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: grey;
       }
     </style>
-    <script></script>
+    <script>
+      const childrenDataFirstname = ["Peter", "Max", "Hans"];
+      const childrenDataLastname = ["Müller", "Mustermann", "Schmidt"];
+      const childrenDataAge = ["7", "9", "8"];
+
+      function childrenAdd() {
+        console.log(
+          childrenDataFirstname,
+          childrenDataLastname,
+          childrenDataAge
+        );
+      }
+    </script>
   </head>
   <body>
     <button onclick="childrenAdd()">ADD</button>
 
     <div class="children-data">
-      Vorname: <br />
-      Nachname: <br />
-      Alter:
+      <div>Vorname:</div>
+      <br />
+      <div>Nachname:</div>
+      <br />
+      <div>Alter:</div>
     </div>
     <div id="wrapper"></div>
   </body>
