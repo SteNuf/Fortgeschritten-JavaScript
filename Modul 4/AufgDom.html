@@ -13,20 +13,62 @@
         grid-column: auto;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        background-color: grey;
+        background-color: rgb(206, 202, 202);
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
       }
     </style>
     <script>
-      const childrenDataFirstname = ["Peter", "Max", "Hans"];
-      const childrenDataLastname = ["Müller", "Mustermann", "Schmidt"];
-      const childrenDataAge = ["7", "9", "8"];
+      const childrenDataFirstname = ["Peter", "Max", "Hans, Lea"];
+      const childrenDataLastname = [
+        "Müller",
+        "Mustermann",
+        "Schmidt",
+        "Hausen",
+      ];
+      const childrenDataAge = ["7", "9", "8", "10"];
 
       function childrenAdd() {
-        console.log(
-          childrenDataFirstname,
-          childrenDataLastname,
-          childrenDataAge
-        );
+        //1. Zufälligkeit von Vornamen, Nachnamen, Alter erstellen
+        const randomFirstName =
+          childrenDataFirstname[
+            Math.floor(Math.random() * childrenDataFirstname.length)
+          ];
+
+        const randomLastName =
+          childrenDataLastname[
+            Math.floor(Math.random() * childrenDataLastname.length)
+          ];
+
+        const randomAge =
+          childrenDataAge[Math.floor(Math.random() * childrenDataAge.length)];
+
+        // Elemente erstellen (Vorname, Nachname Alter) mit Klasse
+        const childrenData = document.createElement("div");
+        childrenData.classList.add("childrenData");
+
+        const firstName = document.createElement("div");
+        const titleFirstName = document.createTextNode("Vorname: ");
+        firstName.classList.add("first-name");
+        firstName.appendChild(titleFirstName);
+
+        const lastName = document.createElement("div");
+        const titleLastName = document.createTextNode("Nachname: ");
+        lastName.classList.add("last-name");
+        lastName.appendChild(titleLastName);
+
+        const pupilsAge = document.createElement("div");
+        const titleAge = document.createTextNode("Alter: ");
+        pupilsAge.classList.add("age");
+        pupilsAge.appendChild(titleAge);
+
+        //Aray einsetzen
+        const arrayFirstname = document.createElement("div");
+        arrayFirstname.classList.add("first-name-array");
+        arrayFirstname.src = childrenDataFirstname;
+        console.log(arrayFirstname);
+
+        console.log(childrenData, firstName, lastName, pupilsAge);
       }
     </script>
   </head>
@@ -34,11 +76,12 @@
     <button onclick="childrenAdd()">ADD</button>
 
     <div class="children-data">
-      <div>Vorname:</div>
+      <div id="first-name">Vorname:</div>
+      <div id="first-name-array"></div>
       <br />
-      <div>Nachname:</div>
+      <div id="last-name">Nachname:</div>
       <br />
-      <div>Alter:</div>
+      <div id="age">Alter:</div>
     </div>
     <div id="wrapper"></div>
   </body>
