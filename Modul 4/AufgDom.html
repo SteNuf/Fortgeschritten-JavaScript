@@ -19,7 +19,7 @@
       }
     </style>
     <script>
-      const childrenDataFirstname = ["Peter", "Max", "Hans, Lea"];
+      const childrenDataFirstname = ["Peter", "Max", "Hans", "Lea"];
       const childrenDataLastname = [
         "Müller",
         "Mustermann",
@@ -48,27 +48,25 @@
         childrenData.classList.add("childrenData");
 
         const firstName = document.createElement("div");
-        const titleFirstName = document.createTextNode("Vorname: ");
+        const titleFirstName = document.createTextNode(
+          "Vorname: " + randomFirstName
+        );
         firstName.classList.add("first-name");
         firstName.appendChild(titleFirstName);
 
         const lastName = document.createElement("div");
-        const titleLastName = document.createTextNode("Nachname: ");
+        const titleLastName = document.createTextNode(
+          "Nachname: " + randomLastName
+        );
         lastName.classList.add("last-name");
         lastName.appendChild(titleLastName);
 
         const pupilsAge = document.createElement("div");
-        const titleAge = document.createTextNode("Alter: ");
+        const titleAge = document.createTextNode("Alter: " + randomAge);
         pupilsAge.classList.add("age");
         pupilsAge.appendChild(titleAge);
 
-        //Aray einsetzen
-        const arrayFirstname = document.createElement("div");
-        arrayFirstname.classList.add("first-name-array");
-        arrayFirstname.src = childrenDataFirstname;
-        console.log(arrayFirstname);
-
-        console.log(childrenData, firstName, lastName, pupilsAge);
+        console.log(firstName, lastName, pupilsAge);
       }
     </script>
   </head>
