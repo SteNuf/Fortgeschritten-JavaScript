@@ -66,7 +66,13 @@
         pupilsAge.classList.add("age");
         pupilsAge.appendChild(titleAge);
 
-        console.log(firstName, lastName, pupilsAge);
+        childrenData.appendChild(titleFirstName);
+        childrenData.appendChild(titleLastName);
+        childrenData.appendChild(titleAge);
+
+        document.getElementById("wrapper").appendChild(childrenData);
+
+        console.log(childrenData);
       }
     </script>
   </head>
@@ -75,7 +81,7 @@
 
     <div class="children-data">
       <div id="first-name">Vorname:</div>
-      <div id="first-name-array"></div>
+
       <br />
       <div id="last-name">Nachname:</div>
       <br />
