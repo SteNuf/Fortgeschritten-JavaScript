@@ -11,11 +11,17 @@
         width: auto;
         display: grid;
         grid-column: auto;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        background-color: rgb(206, 202, 202);
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        width: auto;
+        background-color: rgba(35, 226, 226, 0.973);
         color: black;
         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #first-name::after {
+        content: "\a";
+        white-space: pre;
       }
     </style>
     <script>
@@ -45,7 +51,7 @@
 
         // Elemente erstellen (Vorname, Nachname Alter) mit Klasse
         const childrenData = document.createElement("div");
-        childrenData.classList.add("childrenData");
+        childrenData.classList.add("children-data");
 
         const firstName = document.createElement("div");
         const titleFirstName = document.createTextNode(
@@ -81,10 +87,7 @@
 
     <div class="children-data">
       <div id="first-name">Vorname:</div>
-
-      <br />
       <div id="last-name">Nachname:</div>
-      <br />
       <div id="age">Alter:</div>
     </div>
     <div id="wrapper"></div>
