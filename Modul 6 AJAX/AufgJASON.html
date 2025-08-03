@@ -24,6 +24,76 @@
         },
         password: "enter",
       };
+
+      // TODO 1: Serialisieren und Deserialisieren:
+
+      const serialRandomUserObjekt = JSON.stringify(randomUserObjekt);
+      const deserialRandomUserObjekt = JSON.parse(serialRandomUserObjekt);
+      //console.log(serialRandomUserObjekt, deserialRandomUserObjekt);
+
+      const userString = `  {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Corentin",
+                "last": "Fleury"
+            },
+            "location": {
+                "street": {
+                    "number": 8474,
+                    "name": "Rue de L'Abbaye"
+                },
+                "city": "Metz",
+                "state": "Haute-Corse",
+                "country": "France",
+                "postcode": 20255,
+                "coordinates": {
+                    "latitude": "-19.0455",
+                    "longitude": "-115.0619"
+                },
+                "timezone": {
+                    "offset": "+9:00",
+                    "description": "Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+                }
+            },
+            "email": "corentin.fleury@example.com",
+            "login": {
+                "uuid": "24ed8751-0405-4ad6-8d77-c4010340e0f6",
+                "username": "heavyladybug828",
+                "password": "strike",
+                "salt": "dsbvOYAG",
+                "md5": "f5e9f35aacb5c949616fdf1e74f93a2f",
+                "sha1": "d90635fe3dbc449dfc5d8b376bc29e928ff624a6",
+                "sha256": "12e1b7ca22c34924007fb75138c313f311c549b34c0df9bb8a6e2c6d1e0845ca"
+            },
+            "dob": {
+                "date": "1960-01-17T21:01:32.357Z",
+                "age": 65
+            },
+            "registered": {
+                "date": "2002-07-02T15:30:04.815Z",
+                "age": 23
+            },
+            "phone": "01-12-09-09-42",
+            "cell": "06-68-89-17-73",
+            "id": {
+                "name": "INSEE",
+                "value": "1600089376583 10"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/10.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/10.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/10.jpg"
+            },
+            "nat": "FR"
+        } `;
+      const deserialUser = JSON.parse(userString);
+      deserialUser.gender = "female";
+      console.log(deserialUser);
+      console.log(deserialUser.name.first);
+
+      const serialUser = JSON.stringify(deserialUser);
+      console.log(serialUser);
     </script>
   </head>
   <body></body>
