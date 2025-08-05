@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function main() {
+        console.log("Erste Nachricht");
+        let counter = 0;
+        console.log(counter);
+        let i = 0;
+        while (i < 1000000000) {
+          i++;
+        }
+
+        setTimeout(function () {
+          console.log("Mittlere Nachricht");
+          counter = 100;
+          console.log(counter);
+        }, 1000);
+
+        console.log("Zweite Nachricht");
+        counter = 5;
+        console.log(counter);
+      }
+
+      console.log("Start Nachricht");
+      main();
+      console.log("Ende der Nachricht");
+    </script>
+    <title>Asynchron</title>
+  </head>
+  <body></body>
+</html>
