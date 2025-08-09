@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-      function main() {
+      async function asyncFunction() {
+        return 1;
+      }
+
+      async function main() {
         console.log("Erste Nachricht");
         let counter = 0;
         console.log(counter);
@@ -13,11 +17,33 @@
           i++;
         }
 
-        setTimeout(function () {
-          console.log("Mittlere Nachricht");
-          counter = 100;
-          console.log(counter);
-        }, 1000);
+        const result = await new Promise((resolve, reject) => {
+          setTimeout(function () {
+            console.log("Mittlere Nachricht");
+            counter = 100;
+            console.log("counter: " + counter);
+            resolve(counter);
+          }, 1000);
+        });
+
+        console.log("Result " + result);
+
+        /*result
+          .then((result) => {
+            console.log("Result: " + result);
+            return result + 1;
+          })
+          .then((result) => {
+            console.log("Result: " + result);
+          })
+          .catch((error) => {
+            console.log("Error Catch " + error);
+          }); */
+
+        const resultAwaitFunction = await asyncFunction();
+        console.log("Async Funktion: " + resultAwaitFunction);
+
+        //console.log(result);
 
         console.log("Zweite Nachricht");
         counter = 5;
