@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modulaufgabe API</title>
+    <script>
+      async function getAPIawait() {
+        const getResponse = await fetch(
+          "http://contact-api.devkarriere.de/contacts"
+        );
+        const body = await getResponse.json();
+
+        console.log(body);
+      }
+
+      async function getAPIoneAwait() {
+        const getResponseOne = await fetch(
+          "http://contact-api.devkarriere.de/contacts/11"
+        );
+        const body = await getResponseOne.json();
+        console.log(body);
+      }
+
+      async function getAPIoneAwaitID(id) {
+        const getResponseOne = await fetch(
+          "http://contact-api.devkarriere.de/contacts/" + id
+        );
+        const body = await getResponseOne.json();
+        console.log(body);
+      }
+
+      /********************************************/
+
+      const post = {
+        address: {
+          street: "Linuxstrasse",
+          city: "Systemcity",
+          number: 3334,
+          postcode: 667744,
+        },
+        phone: [
+          {
+            label: "Mobil",
+            value: "123888888",
+          },
+          {
+            label: "Festnetz",
+            value: "6677332212",
+          },
+        ],
+        name: {
+          firstName: "Apple",
+          lastName: "Handy",
+        },
+        birthDate: "2002-05-12T01:01:01.000Z",
+        email: "Apple@-linux.de",
+      };
+
+      async function postAPIawait() {
+        const response = await fetch(
+          "http://contact-api.devkarriere.de/contacts",
+          {
+            method: "POST",
+            body: JSON.stringify(post),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+
+        const body = await response.json();
+        console.log(body);
+      }
+
+      getAPIawait();
+      getAPIoneAwait();
+      getAPIoneAwaitID(11);
+      postAPIawait();
+    </script>
+  </head>
+  <body></body>
+</html>
