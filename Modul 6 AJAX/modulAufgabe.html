@@ -57,6 +57,31 @@
         email: "Apple@-linux.de",
       };
 
+      const putPost = {
+        address: {
+          street: "Applestreet",
+          city: "Applecity",
+          number: 3334,
+          postcode: 667744,
+        },
+        phone: [
+          {
+            label: "Mobil",
+            value: "123888888",
+          },
+          {
+            label: "Festnetz",
+            value: "6677332212",
+          },
+        ],
+        name: {
+          firstName: "Apple",
+          lastName: "Handy",
+        },
+        birthDate: "2002-05-12T01:01:01.000Z",
+        email: "Apple@-linux.de",
+      };
+
       async function postAPIawait() {
         const response = await fetch(
           "http://contact-api.devkarriere.de/contacts",
@@ -71,10 +96,120 @@
         console.log(body);
       }
 
+      async function putAPI() {
+        const response = await fetch(
+          "http://contact-api.devkarriere.de/contacts/637",
+          {
+            method: "PUT",
+            body: JSON.stringify(putPost),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+        const body = await response.json();
+        console.log(body);
+      }
+
+      /**** Alternative post API ****/
+      async function createContact(contact) {
+        const response = await fetch(
+          "http://contact-api.devkarriere.de/contacts",
+          {
+            method: "POST",
+            body: JSON.stringify(contact),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+        const body = await response.json();
+        console.log(body);
+      }
+
+      /**** Alternative PUT API ****/
+
+      async function updateContact(contact, id) {
+        const response = await fetch(
+          "http://contact-api.devkarriere.de/contacts" + id,
+          {
+            method: "PUT",
+            body: JSON.stringify(contact),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+        const body = await response.json();
+        console.log(body);
+      }
+
+      /********** Patch API *******/
+
+      async function patchContact(contact, id) {
+        const response = await fetch(
+          "http://contact-api.devkarriere.de/contacts" + id,
+          {
+            method: "PATCH",
+            body: JSON.stringify(contact),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          }
+        );
+        const body = await response.json();
+        console.log(body);
+      }
+
+      /********** DELETE API *******/
+
+      async function deleteContact(id) {
+        const response = await fetch(
+          "http://contact-api.devkarriere.de/contacts" + id,
+          {
+            method: "DELETE",
+          }
+        );
+        const body = await response.json();
+        console.log(body);
+      }
+
+      const contact = {
+        address: {
+          street: "Linuxstrasse",
+          city: "Systemcity",
+          number: 3334,
+          postcode: 667744,
+        },
+        phone: [
+          {
+            label: "Mobil",
+            value: "123888888",
+          },
+          {
+            label: "Festnetz",
+            value: "6677332212",
+          },
+        ],
+        name: {
+          firstName: "Apple",
+          lastName: "Handy",
+        },
+        birthDate: "2002-05-12T01:01:01.000Z",
+        email: "Apple@-linux.de",
+      };
+
+      /***************************Methoden ************************/
       getAPIawait();
       getAPIoneAwait();
       getAPIoneAwaitID(11);
       postAPIawait();
+      putAPI();
+      createContact(contact);
+
+      contact.address.street = "SteveJobsstr.";
+      updateContact(contact, 8);
+
+      patchContact(
+        {
+          email: "android@google.de",
+        },
+        8
+      );
+
+      deleteContact(8);
     </script>
   </head>
   <body></body>
