@@ -4,7 +4,7 @@
   "description": "\"test\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass --watch style:outpot",
     "hallo": "echo Hallo Stephan",
     "bye": "echo Bye, bye %NAME%"
   },
@@ -13,5 +13,9 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "moment": "^2.30.1"
-  }
+  },
+  "devDependencies": {
+    "sass": "^1.90.0"
+  },
+  "keywords": []
 }
