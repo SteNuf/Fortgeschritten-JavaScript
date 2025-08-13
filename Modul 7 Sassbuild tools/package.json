@@ -4,7 +4,7 @@
   "description": "\"test\"",
   "main": "index.js",
   "scripts": {
-    "compile": "sass --watch style:outpot",
+    "compile": "sass --watch style:output",
     "hallo": "echo Hallo Stephan",
     "bye": "echo Bye, bye %NAME%"
   },
