@@ -1,10 +1,38 @@
-$bg-color: grey;
-$test: " Tschüss!";
-$primary-color: red;
+@use "variables" as *;
+
+@mixin coolDesign($color) {
+  color: $color;
+  background-color: lighten($color, 40);
+}
+
+.special-class {
+  background-color: purple !important;
+  width: 250px;
+}
+
+div {
+  background-color: green;
+  padding: 20px;
+  @extend .special-class;
+
+  h1 {
+    @include coolDesign(red);
+  }
+
+  &.test {
+    background-color: blue;
+    &-1 {
+      background-color: yellow;
+    }
+  }
+}
+
+div {
+  padding: 20px;
+}
 
 h1 {
-  color: $primary-color;
-  background-color: $bg-color;
+  @include coolDesign($primary-color);
   padding: 10px;
 }
 

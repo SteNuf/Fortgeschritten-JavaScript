@@ -1,7 +1,31 @@
 @charset "UTF-8";
+.special-class, div {
+  background-color: purple !important;
+  width: 250px;
+}
+
+div {
+  background-color: green;
+  padding: 20px;
+}
+div h1 {
+  color: red;
+  background-color: #ffcccc;
+}
+div.test {
+  background-color: blue;
+}
+div.test-1 {
+  background-color: yellow;
+}
+
+div {
+  padding: 20px;
+}
+
 h1 {
   color: red;
-  background-color: grey;
+  background-color: #ffcccc;
   padding: 10px;
 }
 
