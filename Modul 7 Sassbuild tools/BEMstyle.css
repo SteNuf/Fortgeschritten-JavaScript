@@ -1,0 +1,25 @@
+.navbar {
+  padding: 1rem;
+  background-color: gray;
+  color: white;
+}
+
+.navbar__logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: orange;
+}
+
+.navbar__item {
+  background-color: darkgray;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+.navbar__item--active {
+  background-color: aquamarine;
+}
+
+.navbar__link {
+  color: white;
+}
