@@ -14,14 +14,12 @@
     padding: 1rem;
     margin: 0.5rem;
 
-    &--active{
-         background-color: aquamarine;
-}
+    &--active {
+      background-color: aquamarine;
     }
-
   }
+}
 
-  &__link {
-    color: white;
-  }
+&__link {
+  color: white;
 }
